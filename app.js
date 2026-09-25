@@ -15,6 +15,21 @@ const app = express();
 // Without this, Express won't detect HTTPS correctly, and Secure cookies will fail.
 app.set('trust proxy', 1);
 
+// ========== REDIRECT WWW → NON-WWW ==========
+// ✅ Forces www.thequantumfinancialservices.com to redirect to thequantumfinancialservices.com
+// This makes the non-www version the canonical URL.
+// MUST come before all other middleware and routes.
+app.use((req, res, next) => {
+  const host = req.headers['x-forwarded-host'] || req.headers.host;
+
+  if (host && host.startsWith('www.')) {
+    const newHost = host.replace(/^www\./, '');
+    return res.redirect(301, `https://${newHost}${req.originalUrl}`);
+  }
+
+  next();
+});
+
 // ========== DATABASE CONNECTION ==========
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/qfs', {
   useNewUrlParser: true,
