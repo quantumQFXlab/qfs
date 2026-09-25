@@ -35,7 +35,7 @@ if (process.env.SMTP_HOST && process.env.SMTP_USER && process.env.SMTP_PASS) {
 }
 
 // ========== CONSTANTS ==========
-const FROM_EMAIL = process.env.FROM_EMAIL || '"QFS" <no-reply@thequantumfinancialservice.com>';
+const FROM_EMAIL = process.env.FROM_EMAIL || '"QFS" <quantums747@gmail.com>';
 const APP_URL    = process.env.APP_URL    || 'http://localhost:3000';
 const APP_NAME   = 'Quantum Financial System';
 const YEAR       = new Date().getFullYear();
