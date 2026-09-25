@@ -36,7 +36,6 @@ if (process.env.SMTP_HOST && process.env.SMTP_USER && process.env.SMTP_PASS) {
 
 // ========== CONSTANTS ==========
 const FROM_EMAIL = process.env.FROM_EMAIL || '"QFS" <no-reply@thequantumfinancialservice.com>';
-const REPLY_TO   = process.env.REPLY_TO   || 'support@thequantumfinancialservice.com';
 const APP_URL    = process.env.APP_URL    || 'http://localhost:3000';
 const APP_NAME   = 'Quantum Financial System';
 const YEAR       = new Date().getFullYear();
@@ -102,14 +101,13 @@ const wrapHtml = ({ title, heading, body, ctaText, ctaUrl, signature, footerNote
 `;
 
 // ========== CORE SEND ==========
-const sendMail = async ({ to, subject, html, replyTo }) => {
+const sendMail = async ({ to, subject, html }) => {
   try {
     const info = await transporter.sendMail({
       from: FROM_EMAIL,
       to,
       subject,
-      html,
-      replyTo: replyTo || REPLY_TO
+      html
     });
     console.log(`✅ Email sent to ${to} [${info.messageId}]`);
     return { success: true, messageId: info.messageId };
