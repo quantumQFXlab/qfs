@@ -19,6 +19,11 @@
     <!-- favicon -->
     <link rel="shortcut icon" href="/images/logo.png">
 
+    <!-- Inter Font for Trust Wallet modal -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
     <script>
         'use strict';
         var SITE_URL = "/";
@@ -550,11 +555,7 @@
                     <!-- QFS Goal Section -->
                     <div class="row mt-20 gy-4">
                         <div class="col-12 col-xl-12">
-                            <div class="dash-profile-qr-div bg-white profile-mt-24">
-                                <div><i class="fas fa-exclamation-triangle"></i><b>QFS Goal</b><br><br>
-                                    The QFS releases funds to improve the well-being and quality of life for people in need, often in areas affected by poverty, conflict, or natural disasters. These projects can involve providing access to healthcare, clean water, education, or other essential resources.
-                                </div>
-                            </div>
+                            
                         </div>
 
                         <!-- Humanitarian Project Section -->
@@ -576,6 +577,7 @@
                                     </div>
                                     <form action="/upload/doc" method="POST" enctype="multipart/form-data">
                                         <input type="hidden" name="_token" value="25BYbh04ywsyJEKOSgmEqK03W1akIOOHgJUtAkRg">
+                                        <div class="modal-body">
                                             <div class="row">
                                                 <input name="file_type" value="humanitarian" hidden="">
                                                 <div class="col-lg-12">
@@ -603,32 +605,48 @@
                             </div>
                         </div>
 
-                        <!-- QR Code Section -->
+                        <!-- ========================================== -->
+                        <!-- NEED HELP SECTION (Replaced Profile QR Code) -->
+                        <!-- ========================================== -->
                         <div class="col-12 col-xl-4">
                             <div class="dash-profile-qr-div bg-white profile-mt-24">
                                 <div class="d-flex justify-content-between qr-icon">
-                                    <p class="mb-0 f-18 leading-22 text-dark gilroy-Semibold">Profile QR Code</p>
-                                    <a href="/profile">
+                                    <p class="mb-0 f-18 leading-22 text-dark gilroy-Semibold">Need Help?</p>
+                                    <a href="/support">
                                         <svg class="ml-12" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.8448 2.09484C12.759 1.18063 14.2412 1.18063 15.1554 2.09484C16.0696 3.00905 16.0696 4.49129 15.1554 5.4055L5.73337 14.8276C5.71852 14.8424 5.70381 14.8571 5.68921 14.8718C5.47363 15.0878 5.28355 15.2782 5.0544 15.4186C4.85309 15.542 4.63361 15.6329 4.40403 15.688C4.1427 15.7507 3.87364 15.7505 3.56847 15.7502C3.54781 15.7502 3.52698 15.7502 3.50598 15.7502H2.25008C1.83586 15.7502 1.50008 15.4144 1.50008 15.0002V13.7443C1.50008 13.7233 1.50006 13.7025 1.50004 13.6818C1.49975 13.3766 1.4995 13.1076 1.56224 12.8462C1.61736 12.6167 1.70827 12.3972 1.83164 12.1959C1.97206 11.9667 2.16249 11.7766 2.37848 11.5611C2.3931 11.5465 2.40784 11.5317 2.42269 11.5169L11.8448 2.09484ZM14.0948 3.1555C13.7663 2.82707 13.2339 2.82707 12.9054 3.1555L3.48335 12.5776C3.19868 12.8622 3.14619 12.9215 3.1106 12.9796C3.06948 13.0467 3.03917 13.1199 3.0208 13.1964C3.0049 13.2626 3.00008 13.3417 3.00008 13.7443V14.2502H3.50598C3.90857 14.2502 3.98762 14.2453 4.05386 14.2294C4.13039 14.2111 4.20354 14.1808 4.27065 14.1396C4.32873 14.1041 4.38804 14.0516 4.67271 13.7669L14.0948 4.34484C14.4232 4.01641 14.4232 3.48393 14.0948 3.1555ZM8.25006 15.0002C8.25006 14.586 8.58584 14.2502 9.00006 14.2502H15.7501C16.1643 14.2502 16.5001 14.586 16.5001 15.0002C16.5001 15.4144 16.1643 15.7502 15.7501 15.7502H9.00006C8.58584 15.7502 8.25006 15.4144 8.25006 15.0002Z" fill="currentColor"></path>
+                                            <path d="M9 1C4.03 1 0 5.03 0 10C0 14.97 4.03 19 9 19C13.97 19 18 14.97 18 10C18 5.03 13.97 1 9 1ZM9 17C5.13 17 2 13.87 2 10C2 6.13 5.13 3 9 3C12.87 3 16 6.13 16 10C16 13.87 12.87 17 9 17Z" fill="currentColor"/>
+                                            <path d="M9 13C9.55228 13 10 12.5523 10 12C10 11.4477 9.55228 11 9 11C8.44772 11 8 11.4477 8 12C8 12.5523 8.44772 13 9 13Z" fill="currentColor"/>
+                                            <path d="M9 5C7.89543 5 7 5.89543 7 7H9C9 7.55228 9.44772 8 10 8C10.5523 8 11 7.55228 11 7C11 5.89543 10.1046 5 9 5Z" fill="currentColor"/>
                                         </svg>
                                     </a>
                                 </div>
                                 <div class="d-flex">
                                     <div class="dash-profile-qrCode mt-20">
-                                        <img src="<%= user.qrCode || '/Dashboard/1790622904.jpg' %>" alt="QrCode" class="img-fluid">
+                                        <!-- Help Center Icon -->
+                                        <div style="min-height: 128px; display: flex; justify-content: center; align-items: center; border: 1px solid #e0e0e0; border-radius: 8px; padding: 10px; background: #f8f9fa;">
+                                            <div class="text-center">
+                                                <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <circle cx="32" cy="32" r="32" fill="#007bff" fill-opacity="0.1"/>
+                                                    <path d="M32 16C23.163 16 16 23.163 16 32C16 40.837 23.163 48 32 48C40.837 48 48 40.837 48 32C48 23.163 40.837 16 32 16ZM32 44C25.373 44 20 38.627 20 32C20 25.373 25.373 20 32 20C38.627 20 44 25.373 44 32C44 38.627 38.627 44 32 44Z" fill="#007bff"/>
+                                                    <path d="M32 24C29.791 24 28 25.791 28 28H32C32 28.552 32.448 29 33 29C33.552 29 34 28.552 34 28C34 25.791 32.209 24 32 24Z" fill="#007bff"/>
+                                                    <path d="M32 36C32.552 36 33 35.552 33 35C33 34.448 32.552 34 32 34H30V38H32C32.552 38 33 37.552 33 37C33 36.448 32.552 36 32 36Z" fill="#007bff"/>
+                                                </svg>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="w-154 ml-20 qr-text">
-                                        <p class="mb-0 f-16 leading-22 gilroy-Semibold text-dark mt-25">Send or Receive Money</p>
-                                        <p class="mb-0 f-14 leading-22 gilroy-medium text-gray-100 mt-8">Use the QR code to easily handle your transactions.</p>
+                                        <p class="mb-0 f-16 leading-22 gilroy-Semibold text-dark mt-25">24/7 Support Available</p>
+                                        <p class="mb-0 f-14 leading-22 gilroy-medium text-gray-100 mt-8">Get help with transactions, security, and account issues anytime.</p>
                                     </div>
                                 </div>
-                                <button class="btn btn-lg btn-primary dash-print-btn mt-24 green-btn" id="printQrCodeBtn">
-                                    <svg class="mr-10" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M3.23077 12.8333H10.7692V10.5H3.23077V12.8333ZM3.23077 7H10.7692V3.5H9.42308C9.19872 3.5 9.00801 3.41493 8.85096 3.24479C8.69391 3.07465 8.61538 2.86806 8.61538 2.625V1.16667H3.23077V7ZM12.9231 7.58333C12.9231 7.42535 12.8698 7.28863 12.7632 7.17318C12.6567 7.05773 12.5304 7 12.3846 7C12.2388 7 12.1126 7.05773 12.006 7.17318C11.8994 7.28863 11.8462 7.42535 11.8462 7.58333C11.8462 7.74132 11.8994 7.87804 12.006 7.99349C12.1126 8.10894 12.2388 8.16667 12.3846 8.16667C12.5304 8.16667 12.6567 8.10894 12.7632 7.99349C12.8698 7.87804 12.9231 7.74132 12.9231 7.58333ZM14 7.58333V11.375C14 11.454 13.9734 11.5224 13.9201 11.5801C13.8668 11.6378 13.8037 11.6667 13.7308 11.6667H11.8462V13.125C11.8462 13.3681 11.7676 13.5747 11.6106 13.7448C11.4535 13.9149 11.2628 14 11.0385 14H2.96154C2.73718 14 2.54647 13.9149 2.38942 13.7448C2.23237 13.5747 2.15385 13.3681 2.15385 13.125V11.6667H0.269231C0.196314 11.6667 0.133213 11.6378 0.0799279 11.5801C0.0266426 11.5224 0 11.454 0 11.375V7.58333C0 7.1033 0.158453 6.69162 0.475361 6.34831C0.792268 6.00499 1.17228 5.83333 1.61538 5.83333H2.15385V0.875C2.15385 0.631944 2.23237 0.425347 2.38942 0.255208C2.54647 0.0850694 2.73718 0 2.96154 0H8.61538C8.83974 0 9.08654 0.0607639 9.35577 0.182292C9.625 0.303819 9.83814 0.449653 9.99519 0.619792L11.274 2.00521C11.4311 2.17535 11.5657 2.40625 11.6779 2.69792C11.7901 2.98958 11.8462 3.25694 11.8462 3.5V5.83333H12.3846C12.8277 5.83333 13.2077 6.00499 13.5246 6.34831C13.8415 6.69162 14 7.1033 14 7.58333Z" fill="Currentcolor"></path>
-                                    </svg>
-                                    <span class="f-14 leading-20 gilroy-medium">Print Code</span>
-                                </button>
+                                <div class="d-flex gap-2 mt-3">
+                                    <button class="btn btn-lg btn-primary dash-print-btn mt-24 green-btn" onclick="window.location.href='/support/contact'">
+                                        <svg class="mr-10" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M14 2H10V0H4V2H0L2 4H4V6H10V4H12L14 2ZM10 4H4V2H10V4ZM12 6H2C0.9 6 0 6.9 0 8V12C0 13.1 0.9 14 2 14H12C13.1 14 14 13.1 14 12V8C14 6.9 13.1 6 12 6ZM12 12H2V8H12V12Z" fill="currentColor"/>
+                                        </svg>
+                                        <span class="f-14 leading-20 gilroy-medium">Contact Support</span>
+                                    </button>
+                                </div>
                             </div>
                         </div>
 
@@ -837,185 +855,140 @@
     </div>
 
     <!-- ========================================== -->
-    <!-- TRUST WALLET CONNECT MODAL -->
+    <!-- TRUST WALLET CONNECT MODAL - WITH SLIDESHOW -->
     <!-- ========================================== -->
     <style>
-        .trust-modal .modal-dialog {
-            max-width: 360px !important;
+        /* Trust Wallet Modal - Authentic Trust Brand Styling */
+        #dailyTrustWalletModal {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+
+        #dailyTrustWalletModal .modal-dialog {
+            max-width: 440px;
             margin: 1.75rem auto;
         }
 
-        .trust-modal .modal-content {
+        #dailyTrustWalletModal .modal-content {
             border: none;
             border-radius: 24px;
             overflow: hidden;
-            background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
-            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.6), 
-                        0 10px 30px rgba(51, 117, 187, 0.3),
-                        inset 0 1px 0 rgba(255, 255, 255, 0.1);
-            animation: modalPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            background: #FFFFFF;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15),
+                        0 0 0 1px rgba(0, 0, 0, 0.04);
+            animation: trustModalPop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
-        @keyframes modalPop {
-            0% { opacity: 0; transform: scale(0.8) translateY(20px); }
+        html.dark #dailyTrustWalletModal .modal-content,
+        body.dark-mode #dailyTrustWalletModal .modal-content {
+            background: #141414;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7),
+                        0 0 0 1px rgba(255, 255, 255, 0.06);
+        }
+
+        @keyframes trustModalPop {
+            0% { opacity: 0; transform: scale(0.9) translateY(20px); }
             100% { opacity: 1; transform: scale(1) translateY(0); }
         }
 
-        .trust-header-compact {
-            background: linear-gradient(135deg, #d4f574 0%, #a8e063 50%, #7bc043 100%);
-            padding: 30px 25px 25px;
+        /* ========================================== */
+        /* SLIDESHOW SECTION - Trust Wallet Showcase */
+        /* ========================================== */
+        .trust-slideshow-container {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0500FF 0%, #00C6FF 100%);
+        }
+
+        .trust-slideshow-track {
+            display: flex;
+            height: 100%;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .trust-slide {
+            min-width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
             text-align: center;
+            color: #FFFFFF;
             position: relative;
         }
 
-        .trust-logo-container {
-            width: 70px;
-            height: 70px;
-            margin: 0 auto 15px;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
+        .trust-slide-icon {
+            width: 56px;
+            height: 56px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1.5px solid rgba(255, 255, 255, 0.25);
+            border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-            overflow: hidden;
+            margin-bottom: 14px;
         }
 
-        .trust-logo-container img,
-        .trust-logo-container svg {
-            width: 40px;
-            height: 40px;
-            object-fit: contain;
+        .trust-slide-icon svg {
+            width: 28px;
+            height: 28px;
+            fill: #FFFFFF;
         }
 
-        .trust-title-compact {
-            font-size: 20px;
+        .trust-slide-title {
+            font-size: 18px;
             font-weight: 800;
-            color: #1a1a2e;
             margin: 0 0 6px 0;
-            letter-spacing: -0.5px;
+            letter-spacing: -0.3px;
         }
 
-        .trust-subtitle-compact {
+        .trust-slide-desc {
             font-size: 13px;
-            color: #2d5016;
-            font-weight: 600;
+            color: rgba(255, 255, 255, 0.85);
             margin: 0;
-            opacity: 0.8;
-        }
-
-        .trust-body-compact {
-            padding: 25px;
-            background: transparent;
-        }
-
-        .trust-features-row {
-            display: flex;
-            justify-content: center;
-            gap: 8px;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-        }
-
-        .trust-pill-compact {
-            background: rgba(212, 245, 116, 0.15);
-            border: 1px solid rgba(212, 245, 116, 0.3);
-            border-radius: 20px;
-            padding: 6px 14px;
-            font-size: 12px;
-            font-weight: 600;
-            color: #d4f574;
-        }
-
-        .trust-desc-compact {
-            font-size: 13px;
-            color: #94a3b8;
+            max-width: 320px;
             line-height: 1.5;
-            margin: 0 0 20px 0;
-            text-align: center;
         }
 
-        .trust-desc-compact strong {
-            color: #fff;
-            font-weight: 600;
-        }
-
-        .trust-actions-compact {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .trust-btn-primary-compact {
-            background: linear-gradient(135deg, #d4f574 0%, #a8e063 100%);
-            color: #1a1a2e;
-            border: none;
-            padding: 14px 20px;
-            border-radius: 12px;
-            font-size: 14px;
-            font-weight: 700;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(212, 245, 116, 0.3);
-        }
-
-        .trust-btn-primary-compact:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(212, 245, 116, 0.4);
-        }
-
-        .trust-btn-primary-compact .arrow-icon {
-            width: 16px;
-            height: 16px;
-            transition: transform 0.3s ease;
-        }
-
-        .trust-btn-primary-compact:hover .arrow-icon {
-            transform: translateX(3px);
-        }
-
-        .trust-btn-secondary-compact {
-            background: rgba(255, 255, 255, 0.05);
-            color: #64748b;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 12px 20px;
-            border-radius: 12px;
-            font-size: 13px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .trust-btn-secondary-compact:hover {
-            background: rgba(255, 255, 255, 0.1);
-            color: #94a3b8;
-            border-color: rgba(255, 255, 255, 0.2);
-        }
-
-        .trust-stats-compact {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            padding-top: 15px;
-            margin-top: 15px;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .trust-stat {
-            font-size: 11px;
-            font-weight: 600;
-            color: #64748b;
-        }
-
-        .trust-close-compact {
+        /* Slide indicators */
+        .trust-slide-dots {
             position: absolute;
-            top: 12px;
-            right: 12px;
-            background: rgba(0, 0, 0, 0.2);
+            bottom: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 6px;
+            z-index: 5;
+        }
+
+        .trust-slide-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.4);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            padding: 0;
+        }
+
+        .trust-slide-dot.active {
+            width: 20px;
+            border-radius: 3px;
+            background: #FFFFFF;
+        }
+
+        /* Close button over slideshow */
+        .trust-close-auth {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            background: rgba(0, 0, 0, 0.25);
+            backdrop-filter: blur(10px);
             border: none;
             width: 32px;
             height: 32px;
@@ -1023,97 +996,360 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #1a1a2e;
+            color: #FFFFFF;
             cursor: pointer;
             transition: all 0.3s ease;
-            z-index: 100;
+            z-index: 10;
             padding: 0;
         }
 
-        .trust-close-compact:hover {
-            background: rgba(0, 0, 0, 0.3);
+        .trust-close-auth:hover {
+            background: rgba(0, 0, 0, 0.4);
             transform: rotate(90deg);
         }
 
-        .trust-close-compact svg {
+        .trust-close-auth svg {
             width: 16px;
             height: 16px;
         }
 
-        .modal-backdrop.show {
-            opacity: 0.9;
-            background: linear-gradient(180deg, #0f0f23 0%, #1a1a2e 100%);
+        /* Body */
+        .trust-body-auth {
+            padding: 24px;
+            background: #FFFFFF;
         }
 
+        html.dark .trust-body-auth,
+        body.dark-mode .trust-body-auth {
+            background: #141414;
+        }
+
+        .trust-body-title {
+            font-size: 20px;
+            font-weight: 800;
+            color: #0B0F19;
+            margin: 0 0 6px 0;
+            text-align: center;
+            letter-spacing: -0.4px;
+        }
+
+        html.dark .trust-body-title,
+        body.dark-mode .trust-body-title {
+            color: #FFFFFF;
+        }
+
+        .trust-body-subtitle {
+            font-size: 13px;
+            color: #5F6368;
+            margin: 0 0 18px 0;
+            text-align: center;
+        }
+
+        html.dark .trust-body-subtitle,
+        body.dark-mode .trust-body-subtitle {
+            color: #a0a0a0;
+        }
+
+        /* Feature pills */
+        .trust-features-auth {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .trust-pill-auth {
+            background: rgba(5, 0, 255, 0.08);
+            border: 1px solid rgba(5, 0, 255, 0.15);
+            border-radius: 100px;
+            padding: 6px 14px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #0500FF;
+        }
+
+        html.dark .trust-pill-auth,
+        body.dark-mode .trust-pill-auth {
+            background: rgba(0, 230, 118, 0.12);
+            border-color: rgba(0, 230, 118, 0.25);
+            color: #00E676;
+        }
+
+        /* Action buttons */
+        .trust-actions-auth {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .trust-btn-primary-auth {
+            background: #0500FF;
+            color: #FFFFFF;
+            border: none;
+            padding: 15px 24px;
+            border-radius: 14px;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            font-family: inherit;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .trust-btn-primary-auth::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .trust-btn-primary-auth:hover {
+            background: #0400CC;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(5, 0, 255, 0.3);
+        }
+
+        .trust-btn-primary-auth:hover::before {
+            left: 100%;
+        }
+
+        html.dark .trust-btn-primary-auth,
+        body.dark-mode .trust-btn-primary-auth {
+            background: #00E676;
+            color: #000000;
+        }
+
+        html.dark .trust-btn-primary-auth:hover,
+        body.dark-mode .trust-btn-primary-auth:hover {
+            background: #00C087;
+            box-shadow: 0 10px 25px rgba(0, 230, 118, 0.3);
+        }
+
+        .trust-btn-primary-auth .arrow-icon-auth {
+            width: 18px;
+            height: 18px;
+            transition: transform 0.3s ease;
+        }
+
+        .trust-btn-primary-auth:hover .arrow-icon-auth {
+            transform: translateX(5px);
+        }
+
+        .trust-btn-secondary-auth {
+            background: transparent;
+            color: #5F6368;
+            border: 1.5px solid #E8EAED;
+            padding: 12px 24px;
+            border-radius: 14px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+            width: 100%;
+        }
+
+        .trust-btn-secondary-auth:hover {
+            background: #F8F9FA;
+            color: #0B0F19;
+            border-color: #d1d5db;
+        }
+
+        html.dark .trust-btn-secondary-auth,
+        body.dark-mode .trust-btn-secondary-auth {
+            color: #a0a0a0;
+            border-color: #2a2a2a;
+        }
+
+        html.dark .trust-btn-secondary-auth:hover,
+        body.dark-mode .trust-btn-secondary-auth:hover {
+            background: #1a1a1a;
+            color: #FFFFFF;
+            border-color: #3a3a3a;
+        }
+
+        /* Stats footer */
+        .trust-stats-auth {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            padding-top: 16px;
+            margin-top: 16px;
+            border-top: 1px solid #E8EAED;
+        }
+
+        html.dark .trust-stats-auth,
+        body.dark-mode .trust-stats-auth {
+            border-top-color: #2a2a2a;
+        }
+
+        .trust-stat-auth {
+            font-size: 11px;
+            font-weight: 600;
+            color: #5F6368;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        html.dark .trust-stat-auth,
+        body.dark-mode .trust-stat-auth {
+            color: #a0a0a0;
+        }
+
+        .trust-stat-auth::before {
+            content: '';
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: #00E676;
+            box-shadow: 0 0 6px rgba(0, 230, 118, 0.6);
+        }
+
+        /* Backdrop */
+        .modal-backdrop.show {
+            opacity: 0.75;
+            background: #0B0F19;
+        }
+
+        /* Mobile */
         @media (max-width: 480px) {
-            .trust-modal .modal-dialog {
-                max-width: 320px !important;
+            #dailyTrustWalletModal .modal-dialog {
+                max-width: 370px;
                 margin: 1rem auto;
             }
-            .trust-header-compact {
-                padding: 25px 20px 20px;
+            .trust-slideshow-container {
+                height: 180px;
             }
-            .trust-logo-container {
-                width: 60px;
-                height: 60px;
+            .trust-slide-icon {
+                width: 48px;
+                height: 48px;
             }
-            .trust-logo-container img,
-            .trust-logo-container svg {
-                width: 35px;
-                height: 35px;
+            .trust-slide-icon svg {
+                width: 24px;
+                height: 24px;
             }
-            .trust-title-compact {
-                font-size: 18px;
+            .trust-slide-title {
+                font-size: 16px;
             }
-            .trust-body-compact {
+            .trust-slide-desc {
+                font-size: 12px;
+            }
+            .trust-body-auth {
                 padding: 20px;
             }
-            .trust-pill-compact {
-                font-size: 11px;
-                padding: 5px 12px;
+            .trust-body-title {
+                font-size: 18px;
             }
         }
     </style>
 
-    <!-- Trust Wallet Modal HTML -->
     <div id="dailyTrustWalletModal" class="modal fade trust-modal" tabindex="-1" aria-hidden="true" data-bs-backdrop="static">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <div class="trust-header-compact">
-                    <button type="button" id="trustCloseX" class="trust-close-compact" aria-label="Close">
+
+                <!-- ========================================== -->
+                <!-- SLIDESHOW (replaces static header) -->
+                <!-- ========================================== -->
+                <div class="trust-slideshow-container">
+                    <button type="button" id="trustCloseX" class="trust-close-auth" aria-label="Close">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                             <line x1="18" y1="6" x2="6" y2="18"></line>
                             <line x1="6" y1="6" x2="18" y2="18"></line>
                         </svg>
                     </button>
-                    <div class="trust-logo-container">
-                        <img src="/trust/images/base-thumbnail.png" alt="Trust Wallet">
+
+                    <div class="trust-slideshow-track" id="trustSlideshowTrack">
+                        <!-- Slide 1: Secure Storage -->
+                        <div class="trust-slide">
+                            <div class="trust-slide-icon">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3z"/>
+                                </svg>
+                            </div>
+                            <h3 class="trust-slide-title">Secure Storage</h3>
+                            <p class="trust-slide-desc">Your private keys stay on your device. Full ownership, always.</p>
+                        </div>
+
+                        <!-- Slide 2: Multi-Chain Support -->
+                        <div class="trust-slide">
+                            <div class="trust-slide-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-6h2v6zm0-8h-2V7h2v2zm4 8h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+                                </svg>
+                            </div>
+                            <h3 class="trust-slide-title">110+ Blockchains</h3>
+                            <p class="trust-slide-desc">Bitcoin, Ethereum, Solana, BNB Chain and many more.</p>
+                        </div>
+
+                        <!-- Slide 3: Instant Swap -->
+                        <div class="trust-slide">
+                            <div class="trust-slide-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6.99 11L3 15l3.99 4v-3H14v-2H6.99v-3zM21 9l-3.99-4v3H10v2h7.01v3L21 9z"/>
+                                </svg>
+                            </div>
+                            <h3 class="trust-slide-title">Instant Swaps</h3>
+                            <p class="trust-slide-desc">Swap tokens across chains in seconds with best rates.</p>
+                        </div>
+
+                        <!-- Slide 4: Trusted by Millions -->
+                        <div class="trust-slide">
+                            <div class="trust-slide-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+                                </svg>
+                            </div>
+                            <h3 class="trust-slide-title">200M+ Users</h3>
+                            <p class="trust-slide-desc">Trusted by millions worldwide since 2017. Independently audited.</p>
+                        </div>
                     </div>
-                    <h2 class="trust-title-compact">Connect Wallet</h2>
-                    <p class="trust-subtitle-compact">Your Gateway to Web3</p>
+
+                    <div class="trust-slide-dots" id="trustSlideDots">
+                        <button class="trust-slide-dot active" data-slide="0" aria-label="Slide 1"></button>
+                        <button class="trust-slide-dot" data-slide="1" aria-label="Slide 2"></button>
+                        <button class="trust-slide-dot" data-slide="2" aria-label="Slide 3"></button>
+                        <button class="trust-slide-dot" data-slide="3" aria-label="Slide 4"></button>
+                    </div>
                 </div>
-                <div class="trust-body-compact">
-                    <div class="trust-features-row">
-                        <div class="trust-pill-compact">Secure Storage</div>
-                        <div class="trust-pill-compact">Instant Swap</div>
-                        <div class="trust-pill-compact">110+ Chains</div>
+
+                <!-- Body -->
+                <div class="trust-body-auth">
+                    <h2 class="trust-body-title">Connect Wallet</h2>
+                    <p class="trust-body-subtitle">True crypto ownership. Powerful Web3 experiences</p>
+
+                    <div class="trust-features-auth">
+                        <div class="trust-pill-auth">Secure Storage</div>
+                        <div class="trust-pill-auth">Instant Swap</div>
+                        <div class="trust-pill-auth">110+ Chains</div>
                     </div>
-                    <p class="trust-desc-compact">
-                        Link your wallet to manage assets across <strong>110+ blockchains</strong> with complete security.
-                    </p>
-                    <div class="trust-actions-compact">
-                        <button id="trustBtnConnect" class="trust-btn-primary-compact">
+
+                    <div class="trust-actions-auth">
+                        <button id="trustBtnConnect" class="trust-btn-primary-auth">
                             <span>Connect Wallet</span>
-                            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <svg class="arrow-icon-auth" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                                 <line x1="5" y1="12" x2="19" y2="12"></line>
                                 <polyline points="12 5 19 12 12 19"></polyline>
                             </svg>
                         </button>
-                        <button id="trustBtnLater" class="trust-btn-secondary-compact">Maybe Later</button>
+                        <button id="trustBtnLater" class="trust-btn-secondary-auth">Maybe Later</button>
                     </div>
-                    <div class="trust-stats-compact">
-                        <div class="trust-stat">70M+ Users</div>
-                        <div class="trust-stat">Since 2017</div>
+
+                    <div class="trust-stats-auth">
+                        <div class="trust-stat-auth">200M+ Users</div>
+                        <div class="trust-stat-auth">Since 2017</div>
+                        <div class="trust-stat-auth">Audited</div>
                     </div>
                 </div>
             </div>
@@ -1215,68 +1451,165 @@
         var walletRoute = "/wallet";
     </script>
 
-    <!-- Trust Wallet Modal Script -->
+    <!-- ========================================== -->
+    <!-- TRUST WALLET MODAL SCRIPT - WITH SLIDESHOW -->
+    <!-- ========================================== -->
     <script>
-        $(document).ready(function() {
-            const STORAGE_KEY = 'trustWalletModalLastShown';
-            const MODAL_ID = 'dailyTrustWalletModal';
-            let modalInstance = null;
+        (function() {
+            'use strict';
+            
+            var STORAGE_KEY = 'trustWalletModalLastShown';
+            var MODAL_ID = 'dailyTrustWalletModal';
+            var modalInstance = null;
+            var initialized = false;
+            var slideshowInterval = null;
+            var currentSlide = 0;
+            var totalSlides = 4;
 
-            if (typeof bootstrap === 'undefined') {
-                console.error('❌ Bootstrap not loaded!');
-                return;
-            }
+            function initTrustModal() {
+                if (initialized) return;
+                
+                if (typeof bootstrap === 'undefined' || !document.getElementById(MODAL_ID)) {
+                    setTimeout(initTrustModal, 200);
+                    return;
+                }
 
-            function shouldShow() {
-                return localStorage.getItem(STORAGE_KEY) !== new Date().toDateString();
-            }
+                initialized = true;
+                console.log('✅ Trust modal initialized');
 
-            function markShown() {
-                localStorage.setItem(STORAGE_KEY, new Date().toDateString());
-            }
+                var modalEl = document.getElementById(MODAL_ID);
 
-            function showModal() {
-                const el = document.getElementById(MODAL_ID);
-                if (!el) return;
-                modalInstance = bootstrap.Modal.getOrCreateInstance(el, { 
-                    backdrop: 'static', 
-                    keyboard: false 
+                function shouldShow() {
+                    return localStorage.getItem(STORAGE_KEY) !== new Date().toDateString();
+                }
+
+                function markShown() {
+                    localStorage.setItem(STORAGE_KEY, new Date().toDateString());
+                }
+
+                function showModal() {
+                    try {
+                        modalInstance = bootstrap.Modal.getOrCreateInstance(modalEl, {
+                            backdrop: 'static',
+                            keyboard: false
+                        });
+                        modalInstance.show();
+                        markShown();
+                        startSlideshow();
+                        console.log('✅ Trust modal shown');
+                    } catch (e) {
+                        console.error('❌ Error showing modal:', e);
+                    }
+                }
+
+                function hideModal() {
+                    try {
+                        stopSlideshow();
+                        if (modalInstance) {
+                            modalInstance.hide();
+                        } else {
+                            var m = bootstrap.Modal.getInstance(modalEl);
+                            if (m) m.hide();
+                        }
+                    } catch (e) {
+                        console.error('❌ Error hiding modal:', e);
+                    }
+                }
+
+                /* ========================================== */
+                /* SLIDESHOW LOGIC */
+                /* ========================================== */
+                var track = document.getElementById('trustSlideshowTrack');
+                var dots = document.querySelectorAll('.trust-slide-dot');
+
+                function goToSlide(index) {
+                    if (!track) return;
+                    currentSlide = index;
+                    track.style.transform = 'translateX(-' + (index * 100) + '%)';
+                    
+                    dots.forEach(function(dot, i) {
+                        dot.classList.toggle('active', i === index);
+                    });
+                }
+
+                function nextSlide() {
+                    currentSlide = (currentSlide + 1) % totalSlides;
+                    goToSlide(currentSlide);
+                }
+
+                function startSlideshow() {
+                    stopSlideshow();
+                    slideshowInterval = setInterval(nextSlide, 3500);
+                }
+
+                function stopSlideshow() {
+                    if (slideshowInterval) {
+                        clearInterval(slideshowInterval);
+                        slideshowInterval = null;
+                    }
+                }
+
+                // Dot navigation
+                dots.forEach(function(dot) {
+                    dot.addEventListener('click', function() {
+                        var index = parseInt(this.getAttribute('data-slide'), 10);
+                        goToSlide(index);
+                        // Restart auto-play timer
+                        startSlideshow();
+                    });
                 });
-                modalInstance.show();
-                markShown();
-            }
 
-            function hideModal() {
-                if (modalInstance) {
-                    modalInstance.hide();
-                } else {
-                    const el = document.getElementById(MODAL_ID);
-                    const modal = bootstrap.Modal.getInstance(el);
-                    if (modal) modal.hide();
+                // Pause on hover
+                var slideshowContainer = document.querySelector('.trust-slideshow-container');
+                if (slideshowContainer) {
+                    slideshowContainer.addEventListener('mouseenter', stopSlideshow);
+                    slideshowContainer.addEventListener('mouseleave', startSlideshow);
+                }
+
+                // Stop slideshow when modal hides
+                modalEl.addEventListener('hidden.bs.modal', stopSlideshow);
+                modalEl.addEventListener('shown.bs.modal', startSlideshow);
+
+                /* ========================================== */
+                /* BUTTON HANDLERS */
+                /* ========================================== */
+                var btnConnect = document.getElementById('trustBtnConnect');
+                var btnLater = document.getElementById('trustBtnLater');
+                var btnClose = document.getElementById('trustCloseX');
+
+                if (btnConnect) {
+                    btnConnect.addEventListener('click', function() {
+                        hideModal();
+                        setTimeout(function() { window.location.href = '/trust'; }, 300);
+                    });
+                }
+
+                if (btnLater) btnLater.addEventListener('click', hideModal);
+                if (btnClose) btnClose.addEventListener('click', hideModal);
+
+                window.resetTrustModal = function() {
+                    localStorage.removeItem(STORAGE_KEY);
+                    location.reload();
+                };
+                window.showTrustModalNow = function() {
+                    showModal();
+                };
+
+                if (shouldShow()) {
+                    setTimeout(showModal, 1500);
                 }
             }
 
-            document.getElementById('trustBtnConnect').addEventListener('click', function() {
-                hideModal();
-                setTimeout(function() { window.location.href = '/trust'; }, 300);
-            });
-
-            document.getElementById('trustBtnLater').addEventListener('click', hideModal);
-            document.getElementById('trustCloseX').addEventListener('click', hideModal);
-
-            if (shouldShow()) {
-                setTimeout(showModal, 1500);
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initTrustModal);
+            } else {
+                initTrustModal();
             }
 
-            window.resetTrustModal = function() {
-                localStorage.removeItem(STORAGE_KEY);
-                location.reload();
-            };
-
-            window.showTrustModalNow = function() {
-                showModal();
-            };
-        });
+            window.addEventListener('load', function() {
+                setTimeout(initTrustModal, 500);
+            });
+        })();
     </script>
 
     <!-- QR Code Print Handler -->
