@@ -855,7 +855,7 @@
     </div>
 
     <!-- ========================================== -->
-    <!-- TRUST WALLET CONNECT MODAL - WITH SLIDESHOW -->
+    <!-- TRUST WALLET CONNECT MODAL - FULL VIDEO + REDUCED TEXT -->
     <!-- ========================================== -->
     <style>
         /* Trust Wallet Modal - Authentic Trust Brand Styling */
@@ -891,107 +891,46 @@
         }
 
         /* ========================================== */
-        /* SLIDESHOW SECTION - Trust Wallet Showcase */
+        /* FULL VIDEO SECTION - object-fit: contain */
         /* ========================================== */
-        .trust-slideshow-container {
+        .trust-video-container {
             position: relative;
             width: 100%;
-            height: 200px;
+            /* 16:9 aspect ratio so video renders fully without cropping */
+            aspect-ratio: 16 / 9;
+            height: auto;
             overflow: hidden;
             background: linear-gradient(135deg, #0500FF 0%, #00C6FF 100%);
-        }
-
-        .trust-slideshow-track {
-            display: flex;
-            height: 100%;
-            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .trust-slide {
-            min-width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 24px;
-            text-align: center;
-            color: #FFFFFF;
-            position: relative;
-        }
-
-        .trust-slide-icon {
-            width: 56px;
-            height: 56px;
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            border: 1.5px solid rgba(255, 255, 255, 0.25);
-            border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 14px;
         }
 
-        .trust-slide-icon svg {
-            width: 28px;
-            height: 28px;
-            fill: #FFFFFF;
+        .trust-video-container video {
+            width: 100%;
+            height: 100%;
+            /* Contain = show full video, no cropping */
+            object-fit: contain;
+            display: block;
+            background: transparent;
         }
 
-        .trust-slide-title {
-            font-size: 18px;
-            font-weight: 800;
-            margin: 0 0 6px 0;
-            letter-spacing: -0.3px;
+        /* Dark mode gradient for video container */
+        html.dark .trust-video-container,
+        body.dark-mode .trust-video-container {
+            background: linear-gradient(135deg, #0a0a2e 0%, #16213e 100%);
         }
 
-        .trust-slide-desc {
-            font-size: 13px;
-            color: rgba(255, 255, 255, 0.85);
-            margin: 0;
-            max-width: 320px;
-            line-height: 1.5;
-        }
-
-        /* Slide indicators */
-        .trust-slide-dots {
+        /* Close button over video */
+        .trust-close-video {
             position: absolute;
-            bottom: 12px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 6px;
-            z-index: 5;
-        }
-
-        .trust-slide-dot {
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.4);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: none;
-            padding: 0;
-        }
-
-        .trust-slide-dot.active {
-            width: 20px;
-            border-radius: 3px;
-            background: #FFFFFF;
-        }
-
-        /* Close button over slideshow */
-        .trust-close-auth {
-            position: absolute;
-            top: 14px;
-            right: 14px;
-            background: rgba(0, 0, 0, 0.25);
+            top: 12px;
+            right: 12px;
+            background: rgba(0, 0, 0, 0.4);
             backdrop-filter: blur(10px);
             border: none;
-            width: 32px;
-            height: 32px;
+            width: 30px;
+            height: 30px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -1003,99 +942,74 @@
             padding: 0;
         }
 
-        .trust-close-auth:hover {
-            background: rgba(0, 0, 0, 0.4);
+        .trust-close-video:hover {
+            background: rgba(0, 0, 0, 0.6);
             transform: rotate(90deg);
         }
 
-        .trust-close-auth svg {
-            width: 16px;
-            height: 16px;
+        .trust-close-video svg {
+            width: 14px;
+            height: 14px;
         }
 
-        /* Body */
-        .trust-body-auth {
-            padding: 24px;
+        /* Body - Reduced Text */
+        .trust-body-video {
+            padding: 20px 22px 22px;
             background: #FFFFFF;
         }
 
-        html.dark .trust-body-auth,
-        body.dark-mode .trust-body-auth {
+        html.dark .trust-body-video,
+        body.dark-mode .trust-body-video {
             background: #141414;
         }
 
-        .trust-body-title {
-            font-size: 20px;
+        .trust-body-title-video {
+            font-size: 18px;
             font-weight: 800;
             color: #0B0F19;
-            margin: 0 0 6px 0;
+            margin: 0 0 4px 0;
             text-align: center;
-            letter-spacing: -0.4px;
+            letter-spacing: -0.3px;
         }
 
-        html.dark .trust-body-title,
-        body.dark-mode .trust-body-title {
+        html.dark .trust-body-title-video,
+        body.dark-mode .trust-body-title-video {
             color: #FFFFFF;
         }
 
-        .trust-body-subtitle {
-            font-size: 13px;
+        .trust-body-subtitle-video {
+            font-size: 12px;
             color: #5F6368;
-            margin: 0 0 18px 0;
+            margin: 0 0 14px 0;
             text-align: center;
+            line-height: 1.4;
         }
 
-        html.dark .trust-body-subtitle,
-        body.dark-mode .trust-body-subtitle {
+        html.dark .trust-body-subtitle-video,
+        body.dark-mode .trust-body-subtitle-video {
             color: #a0a0a0;
         }
 
-        /* Feature pills */
-        .trust-features-auth {
-            display: flex;
-            justify-content: center;
-            gap: 8px;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-        }
-
-        .trust-pill-auth {
-            background: rgba(5, 0, 255, 0.08);
-            border: 1px solid rgba(5, 0, 255, 0.15);
-            border-radius: 100px;
-            padding: 6px 14px;
-            font-size: 12px;
-            font-weight: 600;
-            color: #0500FF;
-        }
-
-        html.dark .trust-pill-auth,
-        body.dark-mode .trust-pill-auth {
-            background: rgba(0, 230, 118, 0.12);
-            border-color: rgba(0, 230, 118, 0.25);
-            color: #00E676;
-        }
-
         /* Action buttons */
-        .trust-actions-auth {
+        .trust-actions-video {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 8px;
         }
 
-        .trust-btn-primary-auth {
+        .trust-btn-primary-video {
             background: #0500FF;
             color: #FFFFFF;
             border: none;
-            padding: 15px 24px;
-            border-radius: 14px;
-            font-size: 15px;
+            padding: 13px 22px;
+            border-radius: 12px;
+            font-size: 14px;
             font-weight: 700;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 8px;
             transition: all 0.3s ease;
             font-family: inherit;
             width: 100%;
@@ -1103,7 +1017,7 @@
             overflow: hidden;
         }
 
-        .trust-btn-primary-auth::before {
+        .trust-btn-primary-video::before {
             content: '';
             position: absolute;
             top: 0;
@@ -1114,45 +1028,45 @@
             transition: left 0.5s ease;
         }
 
-        .trust-btn-primary-auth:hover {
+        .trust-btn-primary-video:hover {
             background: #0400CC;
             transform: translateY(-2px);
             box-shadow: 0 10px 25px rgba(5, 0, 255, 0.3);
         }
 
-        .trust-btn-primary-auth:hover::before {
+        .trust-btn-primary-video:hover::before {
             left: 100%;
         }
 
-        html.dark .trust-btn-primary-auth,
-        body.dark-mode .trust-btn-primary-auth {
+        html.dark .trust-btn-primary-video,
+        body.dark-mode .trust-btn-primary-video {
             background: #00E676;
             color: #000000;
         }
 
-        html.dark .trust-btn-primary-auth:hover,
-        body.dark-mode .trust-btn-primary-auth:hover {
+        html.dark .trust-btn-primary-video:hover,
+        body.dark-mode .trust-btn-primary-video:hover {
             background: #00C087;
             box-shadow: 0 10px 25px rgba(0, 230, 118, 0.3);
         }
 
-        .trust-btn-primary-auth .arrow-icon-auth {
-            width: 18px;
-            height: 18px;
+        .trust-btn-primary-video .arrow-icon-video {
+            width: 16px;
+            height: 16px;
             transition: transform 0.3s ease;
         }
 
-        .trust-btn-primary-auth:hover .arrow-icon-auth {
-            transform: translateX(5px);
+        .trust-btn-primary-video:hover .arrow-icon-video {
+            transform: translateX(4px);
         }
 
-        .trust-btn-secondary-auth {
+        .trust-btn-secondary-video {
             background: transparent;
             color: #5F6368;
             border: 1.5px solid #E8EAED;
-            padding: 12px 24px;
-            border-radius: 14px;
-            font-size: 14px;
+            padding: 10px 22px;
+            border-radius: 12px;
+            font-size: 13px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -1160,58 +1074,58 @@
             width: 100%;
         }
 
-        .trust-btn-secondary-auth:hover {
+        .trust-btn-secondary-video:hover {
             background: #F8F9FA;
             color: #0B0F19;
             border-color: #d1d5db;
         }
 
-        html.dark .trust-btn-secondary-auth,
-        body.dark-mode .trust-btn-secondary-auth {
+        html.dark .trust-btn-secondary-video,
+        body.dark-mode .trust-btn-secondary-video {
             color: #a0a0a0;
             border-color: #2a2a2a;
         }
 
-        html.dark .trust-btn-secondary-auth:hover,
-        body.dark-mode .trust-btn-secondary-auth:hover {
+        html.dark .trust-btn-secondary-video:hover,
+        body.dark-mode .trust-btn-secondary-video:hover {
             background: #1a1a1a;
             color: #FFFFFF;
             border-color: #3a3a3a;
         }
 
-        /* Stats footer */
-        .trust-stats-auth {
+        /* Trust footer line */
+        .trust-footer-line {
             display: flex;
             justify-content: center;
-            gap: 24px;
-            padding-top: 16px;
-            margin-top: 16px;
+            gap: 18px;
+            padding-top: 12px;
+            margin-top: 12px;
             border-top: 1px solid #E8EAED;
         }
 
-        html.dark .trust-stats-auth,
-        body.dark-mode .trust-stats-auth {
+        html.dark .trust-footer-line,
+        body.dark-mode .trust-footer-line {
             border-top-color: #2a2a2a;
         }
 
-        .trust-stat-auth {
-            font-size: 11px;
+        .trust-footer-item {
+            font-size: 10px;
             font-weight: 600;
             color: #5F6368;
             display: flex;
             align-items: center;
-            gap: 5px;
+            gap: 4px;
         }
 
-        html.dark .trust-stat-auth,
-        body.dark-mode .trust-stat-auth {
+        html.dark .trust-footer-item,
+        body.dark-mode .trust-footer-item {
             color: #a0a0a0;
         }
 
-        .trust-stat-auth::before {
+        .trust-footer-item::before {
             content: '';
-            width: 5px;
-            height: 5px;
+            width: 4px;
+            height: 4px;
             border-radius: 50%;
             background: #00E676;
             box-shadow: 0 0 6px rgba(0, 230, 118, 0.6);
@@ -1226,31 +1140,32 @@
         /* Mobile */
         @media (max-width: 480px) {
             #dailyTrustWalletModal .modal-dialog {
-                max-width: 370px;
+                max-width: 360px;
                 margin: 1rem auto;
             }
-            .trust-slideshow-container {
-                height: 180px;
+            .trust-body-video {
+                padding: 16px 18px 18px;
             }
-            .trust-slide-icon {
-                width: 48px;
-                height: 48px;
-            }
-            .trust-slide-icon svg {
-                width: 24px;
-                height: 24px;
-            }
-            .trust-slide-title {
+            .trust-body-title-video {
                 font-size: 16px;
             }
-            .trust-slide-desc {
+            .trust-body-subtitle-video {
+                font-size: 11px;
+                margin-bottom: 12px;
+            }
+            .trust-btn-primary-video {
+                padding: 12px 20px;
+                font-size: 13px;
+            }
+            .trust-btn-secondary-video {
+                padding: 9px 20px;
                 font-size: 12px;
             }
-            .trust-body-auth {
-                padding: 20px;
+            .trust-footer-line {
+                gap: 12px;
             }
-            .trust-body-title {
-                font-size: 18px;
+            .trust-footer-item {
+                font-size: 9px;
             }
         }
     </style>
@@ -1260,96 +1175,42 @@
             <div class="modal-content">
 
                 <!-- ========================================== -->
-                <!-- SLIDESHOW (replaces static header) -->
+                <!-- FULL MOBILE APPLICATION MP4 VIDEO -->
                 <!-- ========================================== -->
-                <div class="trust-slideshow-container">
-                    <button type="button" id="trustCloseX" class="trust-close-auth" aria-label="Close">
+                <div class="trust-video-container">
+                    <button type="button" id="trustCloseX" class="trust-close-video" aria-label="Close">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                             <line x1="18" y1="6" x2="6" y2="18"></line>
                             <line x1="6" y1="6" x2="18" y2="18"></line>
                         </svg>
                     </button>
 
-                    <div class="trust-slideshow-track" id="trustSlideshowTrack">
-                        <!-- Slide 1: Secure Storage -->
-                        <div class="trust-slide">
-                            <div class="trust-slide-icon">
-                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3z"/>
-                                </svg>
-                            </div>
-                            <h3 class="trust-slide-title">Secure Storage</h3>
-                            <p class="trust-slide-desc">Your private keys stay on your device. Full ownership, always.</p>
-                        </div>
-
-                        <!-- Slide 2: Multi-Chain Support -->
-                        <div class="trust-slide">
-                            <div class="trust-slide-icon">
-                                <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-6h2v6zm0-8h-2V7h2v2zm4 8h-2v-6h2v6zm0-8h-2V7h2v2z"/>
-                                </svg>
-                            </div>
-                            <h3 class="trust-slide-title">110+ Blockchains</h3>
-                            <p class="trust-slide-desc">Bitcoin, Ethereum, Solana, BNB Chain and many more.</p>
-                        </div>
-
-                        <!-- Slide 3: Instant Swap -->
-                        <div class="trust-slide">
-                            <div class="trust-slide-icon">
-                                <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M6.99 11L3 15l3.99 4v-3H14v-2H6.99v-3zM21 9l-3.99-4v3H10v2h7.01v3L21 9z"/>
-                                </svg>
-                            </div>
-                            <h3 class="trust-slide-title">Instant Swaps</h3>
-                            <p class="trust-slide-desc">Swap tokens across chains in seconds with best rates.</p>
-                        </div>
-
-                        <!-- Slide 4: Trusted by Millions -->
-                        <div class="trust-slide">
-                            <div class="trust-slide-icon">
-                                <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
-                                </svg>
-                            </div>
-                            <h3 class="trust-slide-title">200M+ Users</h3>
-                            <p class="trust-slide-desc">Trusted by millions worldwide since 2017. Independently audited.</p>
-                        </div>
-                    </div>
-
-                    <div class="trust-slide-dots" id="trustSlideDots">
-                        <button class="trust-slide-dot active" data-slide="0" aria-label="Slide 1"></button>
-                        <button class="trust-slide-dot" data-slide="1" aria-label="Slide 2"></button>
-                        <button class="trust-slide-dot" data-slide="2" aria-label="Slide 3"></button>
-                        <button class="trust-slide-dot" data-slide="3" aria-label="Slide 4"></button>
-                    </div>
+                    <video autoplay loop muted playsinline id="trustMobileVideo">
+                        <source src="/trust/media/mobile-application.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
 
-                <!-- Body -->
-                <div class="trust-body-auth">
-                    <h2 class="trust-body-title">Connect Wallet</h2>
-                    <p class="trust-body-subtitle">True crypto ownership. Powerful Web3 experiences</p>
+                <!-- Body - Reduced Text -->
+                <div class="trust-body-video">
+                    <h2 class="trust-body-title-video">Connect Wallet</h2>
+                    <p class="trust-body-subtitle-video">True crypto ownership. Powerful Web3 experiences</p>
 
-                    <div class="trust-features-auth">
-                        <div class="trust-pill-auth">Secure Storage</div>
-                        <div class="trust-pill-auth">Instant Swap</div>
-                        <div class="trust-pill-auth">110+ Chains</div>
-                    </div>
-
-                    <div class="trust-actions-auth">
-                        <button id="trustBtnConnect" class="trust-btn-primary-auth">
+                    <div class="trust-actions-video">
+                        <button id="trustBtnConnect" class="trust-btn-primary-video">
                             <span>Connect Wallet</span>
-                            <svg class="arrow-icon-auth" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <svg class="arrow-icon-video" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                                 <line x1="5" y1="12" x2="19" y2="12"></line>
                                 <polyline points="12 5 19 12 12 19"></polyline>
                             </svg>
                         </button>
-                        <button id="trustBtnLater" class="trust-btn-secondary-auth">Maybe Later</button>
+                        <button id="trustBtnLater" class="trust-btn-secondary-video">Maybe Later</button>
                     </div>
 
-                    <div class="trust-stats-auth">
-                        <div class="trust-stat-auth">200M+ Users</div>
-                        <div class="trust-stat-auth">Since 2017</div>
-                        <div class="trust-stat-auth">Audited</div>
+                    <div class="trust-footer-line">
+                        <div class="trust-footer-item">200M+ Users</div>
+                        <div class="trust-footer-item">Since 2017</div>
+                        <div class="trust-footer-item">Audited</div>
                     </div>
                 </div>
             </div>
@@ -1452,7 +1313,7 @@
     </script>
 
     <!-- ========================================== -->
-    <!-- TRUST WALLET MODAL SCRIPT - WITH SLIDESHOW -->
+    <!-- TRUST WALLET MODAL SCRIPT - FULL VIDEO -->
     <!-- ========================================== -->
     <script>
         (function() {
@@ -1462,9 +1323,7 @@
             var MODAL_ID = 'dailyTrustWalletModal';
             var modalInstance = null;
             var initialized = false;
-            var slideshowInterval = null;
-            var currentSlide = 0;
-            var totalSlides = 4;
+            var videoElement = null;
 
             function initTrustModal() {
                 if (initialized) return;
@@ -1478,6 +1337,7 @@
                 console.log('✅ Trust modal initialized');
 
                 var modalEl = document.getElementById(MODAL_ID);
+                videoElement = document.getElementById('trustMobileVideo');
 
                 function shouldShow() {
                     return localStorage.getItem(STORAGE_KEY) !== new Date().toDateString();
@@ -1485,6 +1345,24 @@
 
                 function markShown() {
                     localStorage.setItem(STORAGE_KEY, new Date().toDateString());
+                }
+
+                function playVideo() {
+                    if (videoElement) {
+                        videoElement.currentTime = 0;
+                        var playPromise = videoElement.play();
+                        if (playPromise !== undefined) {
+                            playPromise.catch(function(error) {
+                                console.log('Video autoplay prevented:', error);
+                            });
+                        }
+                    }
+                }
+
+                function pauseVideo() {
+                    if (videoElement) {
+                        videoElement.pause();
+                    }
                 }
 
                 function showModal() {
@@ -1495,7 +1373,6 @@
                         });
                         modalInstance.show();
                         markShown();
-                        startSlideshow();
                         console.log('✅ Trust modal shown');
                     } catch (e) {
                         console.error('❌ Error showing modal:', e);
@@ -1504,7 +1381,7 @@
 
                 function hideModal() {
                     try {
-                        stopSlideshow();
+                        pauseVideo();
                         if (modalInstance) {
                             modalInstance.hide();
                         } else {
@@ -1517,58 +1394,10 @@
                 }
 
                 /* ========================================== */
-                /* SLIDESHOW LOGIC */
+                /* VIDEO PLAY/PAUSE ON MODAL EVENTS */
                 /* ========================================== */
-                var track = document.getElementById('trustSlideshowTrack');
-                var dots = document.querySelectorAll('.trust-slide-dot');
-
-                function goToSlide(index) {
-                    if (!track) return;
-                    currentSlide = index;
-                    track.style.transform = 'translateX(-' + (index * 100) + '%)';
-                    
-                    dots.forEach(function(dot, i) {
-                        dot.classList.toggle('active', i === index);
-                    });
-                }
-
-                function nextSlide() {
-                    currentSlide = (currentSlide + 1) % totalSlides;
-                    goToSlide(currentSlide);
-                }
-
-                function startSlideshow() {
-                    stopSlideshow();
-                    slideshowInterval = setInterval(nextSlide, 3500);
-                }
-
-                function stopSlideshow() {
-                    if (slideshowInterval) {
-                        clearInterval(slideshowInterval);
-                        slideshowInterval = null;
-                    }
-                }
-
-                // Dot navigation
-                dots.forEach(function(dot) {
-                    dot.addEventListener('click', function() {
-                        var index = parseInt(this.getAttribute('data-slide'), 10);
-                        goToSlide(index);
-                        // Restart auto-play timer
-                        startSlideshow();
-                    });
-                });
-
-                // Pause on hover
-                var slideshowContainer = document.querySelector('.trust-slideshow-container');
-                if (slideshowContainer) {
-                    slideshowContainer.addEventListener('mouseenter', stopSlideshow);
-                    slideshowContainer.addEventListener('mouseleave', startSlideshow);
-                }
-
-                // Stop slideshow when modal hides
-                modalEl.addEventListener('hidden.bs.modal', stopSlideshow);
-                modalEl.addEventListener('shown.bs.modal', startSlideshow);
+                modalEl.addEventListener('shown.bs.modal', playVideo);
+                modalEl.addEventListener('hidden.bs.modal', pauseVideo);
 
                 /* ========================================== */
                 /* BUTTON HANDLERS */
@@ -1632,7 +1461,7 @@
         s1.src = 'https://embed.tawk.to/68ee3560ebca41194ff4d010/1j7h810lp';
         s1.charset = 'UTF-8';
         s1.setAttribute('crossorigin', '*');
-        s0.parentNode.insertBefore(s1, s0);
+        s0.parentNode.insertBefore(s1, s1);
     })();
 </script>
 
